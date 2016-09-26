@@ -1,0 +1,42 @@
+{
+  "name": "static-site-gen",
+  "version": "1.0.0",
+  "description": "Generate a static site using webpack and jade.",
+  "main": "development.js",
+  "scripts": {
+    "dev": "development.js",
+    "build": "build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyto/static-site-gen.git"
+  },
+  "author": "Andy To <andyto@gmai.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andyto/static-site-gen/issues"
+  },
+  "homepage": "https://github.com/andyto/static-site-gen#readme",
+  "devDependencies": {
+    "assets-webpack-plugin": "^3.4.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "^0.25.0",
+    "expose-loader": "^0.7.1",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "jade-static": "^1.1.2",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta6",
+    "pug-loader": "^2.3.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.8.2"
+  }
+}
