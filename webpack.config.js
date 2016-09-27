@@ -12,7 +12,7 @@ const config = {
   // Entry point for static analyzer
   context: path.resolve(__dirname, 'src', 'js'),
   entry: {
-    main: './main.js'
+    main: ['./main.js']
   },
 
   output: {
@@ -39,8 +39,6 @@ const config = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: require.resolve('jquery'), loader: 'expose?$!expose?jQuery' },
       { test: /\.jade$/, loader: 'pug' },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
-      { test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader') },
       { test: /\.json$/, loaders: ['json'] },
       { test: /\.png$/, loader: 'url?limit=8192&mimetype=image/png' },
       { test: /\.jpe?g$/, loader: 'url?limit=8192&mimetype=image/jpg' },
@@ -53,15 +51,24 @@ const config = {
     ]
   },
 
-  plugins: []
+  plugins: [new webpack.optimize.OccurenceOrderPlugin()]
 }
 
 if (ENV === 'production') {
   config.output.filename = '[name]-[hash].js'
   config.plugins.push(new ExtractTextPlugin('[name]-[hash].css'))
   config.plugins.push(new AssetsPlugin({ path: path.join(__dirname) }))
+  config.module.loaders.push({ test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') })
+  config.module.loaders.push({
+    test: /\.less$/,
+    loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+  })
 } else {
-  config.plugins.push(new ExtractTextPlugin('[name].css'))
+  config.module.loaders.push({ test: /\.css$/, loaders: ['style-loader', 'css-loader'] })
+  config.module.loaders.push({ test: /\.less$/, loaders: ['style-loader', 'css-loader', 'less-loader'] })
+  config.plugins.push(new webpack.HotModuleReplacementPlugin())
+  config.plugins.push(new webpack.NoErrorsPlugin())
+  config.entry.main.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true')
 }
 
 module.exports = config

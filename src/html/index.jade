@@ -8,8 +8,8 @@ html.no-js(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
     // Place favicon.ico in the root directory
-    link(rel='stylesheet', href=main && main.js ? main.js : '/assets/main.css')
+    if main && main.css
+      link(rel='stylesheet', href=main.css)
   body
     p Hello world! This is HTML5 Boilerplate.
-    p=main
-    script(src=main && main.css ? main.css : '/assets/main.css')
+    script(src=main && main.js ? main.js : '/assets/main.js')
