@@ -63,6 +63,7 @@ if (ENV === 'production') {
     test: /\.less$/,
     loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
   })
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin())
 } else {
   config.module.loaders.push({ test: /\.css$/, loaders: ['style-loader', 'css-loader'] })
   config.module.loaders.push({ test: /\.less$/, loaders: ['style-loader', 'css-loader', 'less-loader'] })
