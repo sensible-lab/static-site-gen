@@ -4,8 +4,8 @@
   "description": "Generate a static site using webpack and jade.",
   "main": "development.js",
   "scripts": {
-    "dev": "development.js",
-    "build": "build.js"
+    "dev": "node development.js",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,10 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.2",
-    "webpack-hot-middleware": "^2.12.2"
+    "webpack-hot-middleware": "^2.12.2",
+    "pug-static-middleware": "latest",
+    "express-pug": "latest",
+    "verror": "latest",
+    "lodash": "latest"
   }
 }
