@@ -13,8 +13,8 @@ compiler.run(function (err) {
   const webpackAssets = require('./webpack-assets.json')
   const locals = require('./src/locals.json')
   _.assign(webpackAssets, locals)
-  
-  const pug = spawnSync('pug', ['src/html', '-o', 'build', '-O', JSON.stringify(webpackAssets)], { encoding: 'utf8' })
+
+  const pug = spawnSync('pug', ['src/html', '-o', 'build', '-O', JSON.stringify(webpackAssets)], {encoding: 'utf8'})
   if (pug.stdout) {
     console.log(pug.stdout)
   } else {
