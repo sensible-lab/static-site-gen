@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    block title
+      title Test title
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    block meta
+      meta(name='description', content='')
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    // Place favicon.ico in the root directory
+    block css
+      if main && main.css
+        link(rel='stylesheet', href=main.css)
+  body
+    block body
+    block script
+      script(src=main && main.js ? main.js : '/assets/main.js')

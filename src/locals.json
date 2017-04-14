@@ -1,3 +1,11 @@
 {
-  "test": "sample text in locals.json"
+  "test": "sample text in locals.json",
+  "text": {
+    "en": {
+      "something": "something EN"
+    },
+    "zh": {
+      "something": "something ZH"
+    }
+  }
 }
