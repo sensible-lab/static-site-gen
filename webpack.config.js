@@ -5,6 +5,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const AssetsPlugin = require('assets-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const ENV = process.env.NODE_ENV
 
@@ -58,6 +59,12 @@ if (ENV === 'production') {
   config.output.filename = '[name]-[hash].js'
   config.plugins.push(new ExtractTextPlugin('[name]-[hash].css'))
   config.plugins.push(new AssetsPlugin({ path: path.join(__dirname) }))
+  config.plugins.push(new CopyWebpackPlugin([
+    {
+      from: path.join(__dirname, 'src', 'assets'),
+      to: path.join(__dirname, 'build', 'assets')
+    }
+  ]))
   config.module.loaders.push({ test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') })
   config.module.loaders.push({
     test: /\.less$/,
