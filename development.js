@@ -36,6 +36,7 @@ app.use(function (req, res, next) {
     next()
   })
 })
+app.use('/assets', express.static(path.join(__dirname, 'src', 'assets')))
 
 app.use(expressPug({
   root: path.join(__dirname, 'src', 'html')
