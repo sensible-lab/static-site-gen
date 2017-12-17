@@ -2,7 +2,7 @@
   "test": "sample text in locals.json",
   "text": {
     "en": {
-      "something": "something EN"
+      "something": "something EN TEST"
     },
     "zh": {
       "something": "something ZH"
