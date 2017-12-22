@@ -1,5 +1,9 @@
-extends ../htmlPartials/layout
-include ../htmlPartials/home
+extends ../partials/layout
+include ../pages/homeBody
+include ../partials/header
 
+block header
+  +header('home')
+  
 block body
-  +home('en')
+  +homeBody()

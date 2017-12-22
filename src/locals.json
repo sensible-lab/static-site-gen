@@ -1,11 +1,47 @@
 {
-  "test": "sample text in locals.json",
-  "text": {
+  "i18n": {
     "en": {
       "something": "something EN TEST"
     },
     "zh": {
       "something": "something ZH"
+    }
+  },
+  "locations": {
+    "home": {
+      "url": "/",
+      "name": {
+        "en": "Home",
+        "zh": "Home zh"
+      }
+    },
+    "whitepaper": {
+      "url": "/white-paper",
+      "name": {
+        "en": "Whitepaper",
+        "zh": "Whitepaper zh"
+      }
+    },
+    "roadmap": {
+      "url": "/road-map",
+      "name": {
+        "en": "Roadmap",
+        "zh": "Roadmap zh"
+      }
+    },
+    "ico": {
+      "url": "/ico",
+      "name": {
+        "en": "ICO",
+        "zh": "ICO zh"
+      }
+    },
+    "team": {
+      "url": "/team",
+      "name": {
+        "en": "Team",
+        "zh": "Team zh"
+      }
     }
   }
 }

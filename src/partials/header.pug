@@ -1,0 +1,13 @@
+mixin headerLink(destination, location, lang)
+  - var finalLang = lang || 'en'
+  - var url = finalLang === 'en' ? locations[destination].url : '/' + finalLang + locations[destination].url
+  a(href=url, class=destination === location ? 's-header--active' : undefined)= locations[destination].name[finalLang]
+
+mixin header(location, lang)
+  header.s-header
+    nav
+      +headerLink('home', location, lang)
+      +headerLink('whitepaper', location, lang)
+      +headerLink('roadmap', location, lang)
+      +headerLink('ico', location, lang)
+      +headerLink('team', location, lang)
