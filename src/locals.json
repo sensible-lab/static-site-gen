@@ -16,28 +16,28 @@
       }
     },
     "whitepaper": {
-      "url": "/white-paper",
+      "url": "/#white-paper",
       "name": {
         "en": "Whitepaper",
         "zh": "Whitepaper zh"
       }
     },
     "roadmap": {
-      "url": "/road-map",
+      "url": "/#road-map",
       "name": {
         "en": "Roadmap",
         "zh": "Roadmap zh"
       }
     },
     "ico": {
-      "url": "/ico",
+      "url": "/#ico",
       "name": {
         "en": "ICO",
         "zh": "ICO zh"
       }
     },
     "team": {
-      "url": "/team",
+      "url": "/#team",
       "name": {
         "en": "Team",
         "zh": "Team zh"

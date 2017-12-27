@@ -1,5 +1,9 @@
 extends ../partials/layout
 include ../pages/homeBody
+include ../pages/icoBody
+include ../pages/roadmapBody
+include ../pages/whitepaperBody
+include ../pages/teamBody
 include ../partials/header
 
 block header
@@ -7,3 +11,7 @@ block header
   
 block body
   +homeBody()
+  +whitepaperBody()
+  +icoBody()
+  +roadmapBody()
+  +teamBody()
