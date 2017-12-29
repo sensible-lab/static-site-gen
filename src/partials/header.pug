@@ -5,6 +5,7 @@ mixin headerLink(destination, location, lang)
 
 mixin header(location, lang)
   header.s-header
+    img(src='/assets/img/logo.png', class='logo')
     nav
       +headerLink('home', location, lang)
       +headerLink('whitepaper', location, lang)
